@@ -9,8 +9,10 @@ import {
   StyledCTAContainer,
   StyledImageContainer,
 } from './elements';
+import { FC } from 'react';
+import { HeroProps } from '@/type/hero-types';
 
-export const Hero = ({ image, title, description, ctaText, ...props }) => {
+export const Hero: FC<HeroProps> = ({ image, title, description, ctaText, ...props }) => {
   return (
     <StyledContainer {...props}>
       <StyledTextContainer>

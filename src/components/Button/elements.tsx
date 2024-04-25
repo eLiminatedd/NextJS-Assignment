@@ -1,11 +1,13 @@
 import styled, { css } from 'styled-components';
 import { SectionInnerHeading } from '@/components';
+import { VariousBtns } from '@/type/button-types';
 
-const outlinedVariantButton = css`
+
+const outlinedVariantButton = css<VariousBtns>`
   background-color: transparent;
   border: 1px solid;
-  border-color: ${({ theme, color }) => theme[color]};
-  color: ${({ theme, color }) => theme[color]};
+  border-color: ${({ theme, color = 'main' }) => theme[color]};
+  color: ${({ theme, color = 'main' }) => theme[color]};
 
   &:hover {
     border-color: ${({ theme }) => theme.main};
@@ -14,22 +16,22 @@ const outlinedVariantButton = css`
   }
 `;
 
-const containedVariantButton = css`
-  background-color: ${({ theme, color }) => theme[color]};
+const containedVariantButton = css<VariousBtns>`
+  background-color: ${({ theme, color = 'main' }) => theme[color]};
 
   &:hover {
-    background-color: ${({ theme, color }) => theme.hover[color]};
+    background-color: ${({ theme, color = 'main' }) => theme.hover[color]};
   }
 `;
 
-const textVariantButton = css`
-  background-color: transparent;
+const textVariantButton = css<VariousBtns>`
+  background-color:transparent;
   border: none;
   border-radius: 0;
   min-width: unset;
   padding: 0 2rem;
   margin: 0 2rem;
-  color: ${({ theme, color }) => theme[color]};
+  color: ${({ theme, color = 'main' }) => theme[color]};
 
   &:hover {
     color: ${({ theme }) => theme.black};
@@ -43,7 +45,7 @@ const buttonVariants = {
   text: textVariantButton,
 };
 
-export const StyledButton = styled(({ color = 'primary', variant = 'contained', ...props }) => <button {...props} />)`
+export const StyledButton = styled.button<VariousBtns>`
   font-family: sans-serif;
   overflow: hidden;
   text-align: center;
@@ -61,7 +63,9 @@ export const StyledButton = styled(({ color = 'primary', variant = 'contained', 
   cursor: pointer;
   border: none;
   color: white;
-  ${({ variant }) => buttonVariants[variant]}
+  ${({ variant = 'contained' }) => buttonVariants[variant]}
 `;
 
-export const StyledButtonText = styled((props) => <SectionInnerHeading {...props} />)``;
+export const StyledButtonText = styled((props: any) => (
+  <SectionInnerHeading {...props} />
+))``;
