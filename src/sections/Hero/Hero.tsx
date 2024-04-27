@@ -12,7 +12,7 @@ import {
 import { FC } from 'react';
 import { HeroProps } from '@/type/hero-types';
 
-export const Hero: FC<HeroProps> = ({ image, title, description, ctaText, ...props }) => {
+export const Hero: FC<HeroProps> = ({ img, title, description, ctaText, ...props }) => {
   return (
     <StyledContainer {...props}>
       <StyledTextContainer>
@@ -23,7 +23,7 @@ export const Hero: FC<HeroProps> = ({ image, title, description, ctaText, ...pro
         </StyledCTAContainer>
       </StyledTextContainer>
       <StyledImageContainer>
-        <Image layout="responsive" src={image.src} alt={image.alt} width={image.width} height={image.height} />
+        <Image layout="responsive" src={img.src} alt={img.alt} width={img.width} height={img.height} />
       </StyledImageContainer>
     </StyledContainer>
   );

@@ -1,8 +1,8 @@
-import { ImageProps } from './general-types';
+import { imgProps } from './general-types';
 
 export interface HeroProps {
     title: string;
-	image: ImageProps;
+	img: imgProps;
 	ctaText: string;
 	description: string;
 }
