@@ -7,13 +7,17 @@ const heroProps = {
   ctaText: 'Start',
 };
 
+const mainProps = {
+  img: { src: '/resources/video.png', alt: '', width: 400, height: 550 },
+};
+
 export default function Home() {
   return (
     <>
 
       <div>
         <Hero {...heroProps} />
-        <Main></Main>
+        <Main {...mainProps}></Main>
         {/** Other sections */}
       </div>
     </>

@@ -19,6 +19,11 @@ export const StyledSubHeading = styled((props: HTMLAttributes<HTMLHeadingElement
   font-size: 1.5rem;
 `;
 
+export const ImageCont = styled((props: HTMLAttributes<HTMLDivElement>) => <div {...props} />)`
+  height: 100%;
+  display: flex;
+	justify-content: center;
+`;
 
 
 // import { StyledSectionContainer } from '@/components/Containers/SectionContainer/elements';
