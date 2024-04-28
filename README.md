@@ -19,6 +19,7 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Conditions
 
 The section that you need to create is shown in **agencyselection.png**
 
