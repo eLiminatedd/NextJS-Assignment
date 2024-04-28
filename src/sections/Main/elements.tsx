@@ -1,12 +1,19 @@
 'use client';
 import styled from 'styled-components';
-import { StyledSectionHeading, StyledSectionParagraph } from '@/components/Typography/elements';
+import {
+  StyledSectionHeading,
+  StyledSectionParagraph,
+} from '@/components/Typography/elements';
 import { SectionSubheading } from '@/components/Typography/SectionSubheading';
 import { HTMLAttributes } from 'react';
 import { MainWrapContainerInterface } from '@/type/main-types';
 
-export const MobileText = styled((props: HTMLAttributes<HTMLParagraphElement>) => <StyledSectionParagraph {...props} />)`
-  color: #E74C5B;
+export const MobileText = styled(
+  (props: HTMLAttributes<HTMLParagraphElement>) => (
+    <StyledSectionParagraph {...props} />
+  )
+)`
+  color: #e74c5b;
   font-weight: 700;
   width: 150px;
   position: absolute;
@@ -21,11 +28,12 @@ export const MobileText = styled((props: HTMLAttributes<HTMLParagraphElement>) =
 `;
 
 export const MainWrapContainer = styled.div<MainWrapContainerInterface>`
-	margin: 4rem auto;
+  margin: 4rem auto;
   display: flex;
-	flex-direction: column;
-	align-items: center;
+  flex-direction: column;
+  align-items: center;
   gap: 1rem;
+  overflow: hidden;
   background-image: url(${(props) => props.$bgImg.src});
   background-size: ${(props) => props.$bgImg.size};
   background-position: ${(props) => props.$bgImg.position};
@@ -37,28 +45,28 @@ export const MainWrapContainer = styled.div<MainWrapContainerInterface>`
   }
 `;
 
-export const HeadingCont =styled.div<HTMLAttributes<HTMLDivElement>>`
+export const HeadingCont = styled.div<HTMLAttributes<HTMLDivElement>>`
   display: flex;
-	flex-direction: column;
-	justify-content: center;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
   color: black;
 `;
 
-export const StyledMainHeading = styled((props: HTMLAttributes<HTMLHeadingElement>) => <StyledSectionHeading {...props} />)`
+export const StyledMainHeading = styled(  (props: HTMLAttributes<HTMLHeadingElement>) => (    <StyledSectionHeading {...props} />  ))`
   margin: 0;
 `;
 
-export const StyledSubHeading = styled((props: HTMLAttributes<HTMLHeadingElement>) => <SectionSubheading {...props} />)`
+export const StyledSubHeading = styled(  (props: HTMLAttributes<HTMLHeadingElement>) => (    <SectionSubheading {...props} />  ))`
   margin: 0;
   font-weight: 400;
   line-height: 0.5rem;
 `;
 
 export const CardsWrapper = styled.div<HTMLAttributes<HTMLDivElement>>`
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   gap: 2rem;
 
   @media screen and (max-width: 1024px) {
@@ -69,11 +77,11 @@ export const CardsWrapper = styled.div<HTMLAttributes<HTMLDivElement>>`
 export const ImageCont = styled.div<HTMLAttributes<HTMLDivElement>>`
   height: 100%;
   display: flex;
-	justify-content: center;
+  justify-content: center;
 `;
 
 export const ContentContainer = styled.div<HTMLAttributes<HTMLDivElement>>`
-	display: flex;
+  display: flex;
   flex-direction: row;
   justify-content: center;
   max-width: 1200px;
@@ -81,7 +89,7 @@ export const ContentContainer = styled.div<HTMLAttributes<HTMLDivElement>>`
   margin-top: 2rem;
   align-items: center;
   gap: 4rem;
-  
+
   @media screen and (max-width: 1024px) {
     flex-direction: column;
   }

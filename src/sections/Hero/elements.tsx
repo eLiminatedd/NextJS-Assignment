@@ -32,6 +32,7 @@ export const StyledTextContainer = styled((props: HTMLAttributes<HTMLDivElement>
   width: 30%;
   margin-left: 11.125rem;
   font-family: sans-serif;
+  position: absolute;
 `;
 
 export const StyledCTAContainer = styled((props: HTMLAttributes<HTMLDivElement>) => <div {...props} />)`
