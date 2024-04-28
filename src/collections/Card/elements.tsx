@@ -1,10 +1,9 @@
 // Styled elements for the Card go here
 import styled from 'styled-components';
 import { HTMLAttributes } from 'react';
+import {CardWrapInterface} from '@/type/card-types';
 
-export const CardImageCont = styled((props: HTMLAttributes<HTMLDivElement>) => (
-  <div {...props} />
-))`
+export const CardImageCont = styled.div<HTMLAttributes<HTMLDivElement>>`
   width: 25%;
   height: 75%;
   display: flex;
@@ -12,70 +11,42 @@ export const CardImageCont = styled((props: HTMLAttributes<HTMLDivElement>) => (
   padding: 2rem;
 `;
 
-interface CardContProps {
-  backgroundColor: string;
-  width: number;
-}
-
-export const CardContainer = styled.div<CardContProps>`
+export const CardWrapCont = styled.div<CardWrapInterface>`
   display: flex;
+  width: ${(props) => props.width + 'px'};
+  background-color: ${(props) => props.$backgroundColor};
+  min-height: 8.25rem;
+  border-radius: 15px;
+  border: 2px solid transparent;
   align-items: center;
-  /* width: 100%; */
-  width: ${(props) => props.width};
-  background-color: ${(props) => props.backgroundColor};
-  min-height: 7rem;
-  border-radius: 10px;
-  border: 3px solid transparent;
   &:hover {
-    border: 3px solid #006efd;
     color: #006efd;
     cursor: pointer;
+    border: 2px solid #006EFD;
   };
 `;
 
-// export const CardContainer = styled((props: HTMLAttributes<HTMLDivElement>) => (  <div style={props.backgroundColor} {...props} />))`
-//   display: flex;
-//   align-items: center;
-//   /* width: 100%; */
-//   width: `${width}px`
-//   background-color: `${backgroundColor}`;
-//   min-height: 7rem;
-//   border-radius: 10px;
-//   border: 3px solid transparent;
-//   &:hover {
-//     border: 3px solid #006efd;
-//     color: #006efd;
-//     cursor: pointer;
-//   }
-//`;
-
-export const CardHeader = styled((props: HTMLAttributes<HTMLDivElement>) => (
-  <h1 {...props} />
-))`
-  font-weight: 700;
+export const CardHeader = styled.div<HTMLAttributes<HTMLDivElement>>`
+  font-weight: bold;
   font-size: 1.2rem;
-  margin-bottom: 0;
-  ${CardContainer}:hover & {
+  margin-bottom: 5px;
+  ${CardWrapCont}:hover & {
     text-decoration: underline;
   }
 `;
 
-export const CardInnerText = styled((props: HTMLAttributes<HTMLDivElement>) => (
-  <p {...props} />
-))`
-  font-size: 1rem;
-  line-height: 1.5rem;
-  font-weight: 400;
+export const CardDescription = styled.div<HTMLAttributes<HTMLDivElement>>`
   color: black;
-  margin-top: 5px;
+  font-size: 1rem;
+  line-height: 24px;
+  font-weight: 200;
 `;
 
-export const CardTextCont = styled((props: HTMLAttributes<HTMLDivElement>) => (
-  <div {...props} />
-))`
+export const CardTextCont = styled.div<HTMLAttributes<HTMLDivElement>>`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-right: 20px;
+  padding-right: 30px;
+  margin-right: 0px
   width: 75%;
 `;

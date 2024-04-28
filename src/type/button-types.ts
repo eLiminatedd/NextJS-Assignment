@@ -1,15 +1,15 @@
 import { ButtonHTMLAttributes, ReactNode } from 'react';
 import { theme } from '@/styles';
 
-export interface ButtonStyle {
+export interface ButtonStyleInterface {
     color?: string;
     variant?: string,
     [props: string]: any
 }
 
-export interface ButtonIntrface extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonInterface extends ButtonHTMLAttributes<HTMLButtonElement> {
     children: ReactNode;
-    props: any;
+    [props: string]: any;
 }
 
 export interface VariousBtns extends ButtonHTMLAttributes<HTMLButtonElement> {

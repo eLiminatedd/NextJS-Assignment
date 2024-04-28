@@ -2,7 +2,6 @@
 import { HTMLAttributes, forwardRef } from 'react';
 import styled from 'styled-components';
 
-
 export const StyledSectionBigHeading = styled(forwardRef<HTMLHeadingElement, HTMLAttributes<HTMLHeadingElement>>((props, ref) => <h1 {...props} ref={ref} />))`
   font-family: Poppins;
   font-weight: 600;
@@ -44,5 +43,3 @@ export const StyledSectionParagraph = styled.p`
   line-height: 1.5rem;
   font-weight: 400;
 `;
-
-

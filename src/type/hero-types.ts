@@ -5,9 +5,10 @@ export interface HeroProps {
 	img: imgProps;
 	ctaText: string;
 	description: string;
+    href: string;
 }
 
-export interface StyledContainerProps {
+export interface StyledContainerInterface {
     height?: number;
     [cssKey: string]: any;
   };

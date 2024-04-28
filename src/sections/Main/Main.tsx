@@ -1,56 +1,49 @@
 'use client';
-import { StyledMainHeading, StyledSubHeading, ImageCont, ContentContainer } from './elements';
+import {
+  MainWrapContainer,
+  StyledMainHeading,
+  StyledSubHeading,
+  ImageCont,
+  ContentContainer,
+  HeadingCont,
+  CardsWrapper,
+  MobileText,
+} from './elements';
 import Image from 'next/image';
 import { FC } from 'react';
 import { Card } from '@/collections/Card/';
+import { MainComponentInterface } from '@/type/main-types';
+import { CardInterface } from '@/type/card-types';
 
-const title = 'Managed agency selection';
-const subtitle = 'Strenghten your onboarding process';
-
-export const Main: FC<any> = ({ CardsProps, img, ...props }) => {
+export const Main: FC<MainComponentInterface> = ({
+  bgImg,
+  cardsProps,
+  agencyImg,
+  headingText,
+  ...props
+}) => {
   return (
-    <>
-      <div>
-        <StyledMainHeading>{title}</StyledMainHeading>
-        <StyledSubHeading>{subtitle}</StyledSubHeading>
-      </div>
+    <MainWrapContainer $bgImg={bgImg}>
+      <HeadingCont>
+        <StyledMainHeading>{headingText.title}</StyledMainHeading>
+        <StyledSubHeading>{headingText.subtitle}</StyledSubHeading>
+      </HeadingCont>
       <ContentContainer>
         <ImageCont>
           <Image
-            src={img.src}
-            alt={img.alt}
-            width={img.width}
-            height={img.height}
+            src={agencyImg.src}
+            alt={agencyImg.alt}
+            width={agencyImg.width}
+            height={agencyImg.height}
           ></Image>
         </ImageCont>
-        <div>
-          {CardsProps.map((card: any) => (
-            <Card key={card.index} {...card }/>
-
+        <CardsWrapper>
+          <MobileText>{props.mobileMessage}</MobileText>
+          {cardsProps.map((card: CardInterface, i: number) => (
+            <Card key={i} {...card} />
           ))}
-      
-        </div>
+        </CardsWrapper>
       </ContentContainer>
-    </>
-    // <textContainer>
-    // 	    Big heading
-    // 	    Heading
-    // <textContainer>
-    // <ContentContainer>
-    //  	<StyledImageContainer>
-    // 		    Image
-    // 	    <StyledImageContainer>
-    // 	    CardContainer - cardsData.map(card => (
-    // 		    <Card>
-    // 			    <StyledImageContainer>
-    // 				    Image
-    // 			    <StyledImageContainer>
-    // 			    <CardText>
-    // 				    CardHeading
-    // 				    CardDescription
-    // 			    <CardText>
-    // 		    <Card> )
-    // 	    CardContainer
-    // <ContentContainer>
+    </MainWrapContainer>
   );
 };

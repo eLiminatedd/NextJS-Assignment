@@ -5,16 +5,14 @@ import { StyledSectionBigHeading } from '@/components/Typography/elements';
 import { SectionSubheading } from '@/components/Typography/SectionSubheading';
 import { HTMLAttributes } from 'react';
 import { StyledButton } from '@/components/Button/elements';
+import { StyledContainerInterface } from '@/type/hero-types';
+import { ButtonStyleInterface } from '@/type/button-types';
 
-import { StyledContainerProps } from '@/type/hero-types';
-import { ButtonStyle } from '@/type/button-types';
-
-
-export const StyledContainer = styled(({ height, ...props }: StyledContainerProps) => <StyledSectionContainer {...props} />)`
+export const StyledContainer = styled(({ height, ...props }: StyledContainerInterface) => <StyledSectionContainer {...props} />)`
   align-items: center;
 `;
 
-export const StyledGetStartedBtn = styled((props: ButtonStyle) => <StyledButton {...props} variant="contained" color="main" />)`
+export const StyledGetStartedBtn = styled((props: ButtonStyleInterface) => <StyledButton {...props} variant="contained" color="main" />)`
   margin-top: 4.375rem;
   padding-top: 0;
   padding-bottom: 0;

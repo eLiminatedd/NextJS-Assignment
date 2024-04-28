@@ -13,7 +13,6 @@ import { FC } from 'react';
 import { HeroProps } from '@/type/hero-types';
 import { useRouter } from 'next/navigation';
 
-
 export const Hero: FC<HeroProps> = ({ img, title, description, ctaText, ...props }) => {
   const router = useRouter();
 
