@@ -2,6 +2,10 @@ An interview assignment project. Тhe task is completed according to the set con
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Links
+
+* Netlify Deployment: https://nextapp-agencytask.netlify.app/
+* Main section is @ https://nextapp-agencytask.netlify.app/agency or just click 'Start' Button for redirection!
 
 ## Getting Started
 
