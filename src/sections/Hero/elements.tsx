@@ -10,7 +10,6 @@ import { StyledContainerProps } from '@/type/hero-types';
 import { ButtonStyle } from '@/type/button-types';
 
 
-
 export const StyledContainer = styled(({ height, ...props }: StyledContainerProps) => <StyledSectionContainer {...props} />)`
   align-items: center;
 `;

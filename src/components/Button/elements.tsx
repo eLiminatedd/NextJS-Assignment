@@ -2,7 +2,6 @@ import styled, { css } from 'styled-components';
 import { SectionInnerHeading } from '@/components';
 import { VariousBtns } from '@/type/button-types';
 
-
 const outlinedVariantButton = css<VariousBtns>`
   background-color: transparent;
   border: 1px solid;
@@ -67,5 +66,5 @@ export const StyledButton = styled.button<VariousBtns>`
 `;
 
 export const StyledButtonText = styled((props: any) => (
-  <SectionInnerHeading {...props} />
+    <SectionInnerHeading {...props} />
 ))``;

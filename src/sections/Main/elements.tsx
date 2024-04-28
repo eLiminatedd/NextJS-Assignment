@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { StyledSectionBigHeading } from '@/components/Typography/elements';
 import { SectionSubheading } from '@/components/Typography/SectionSubheading';
 import { HTMLAttributes } from 'react';
+import { StyledSectionContainer } from '@/components/Containers/SectionContainer/elements';
 
 export const StyledMainHeading = styled((props: HTMLAttributes<HTMLHeadingElement>) => <StyledSectionBigHeading {...props} />)`
   text-align: center;
@@ -26,7 +27,22 @@ export const ImageCont = styled((props: HTMLAttributes<HTMLDivElement>) => <div 
 `;
 
 
-// import { StyledSectionContainer } from '@/components/Containers/SectionContainer/elements';
+export const ContentContainer = styled((props: HTMLAttributes<HTMLDivElement>) => <StyledSectionContainer {...props} />)`
+	display: flex;
+  flex-direction: row;
+  justify-content: center;
+  max-width: 1200px;
+  width: 100%;
+  margin-top: 2rem;
+  align-items: center;
+  gap: 4rem;
+  
+  @media screen and (max-width: 1024px) {
+    flex-wrap: wrap;
+  }
+`;
+
+
 // import { StyledButton } from '@/components/Button/elements';
 
 // import { StyledContainerProps } from '@/type/hero-types';

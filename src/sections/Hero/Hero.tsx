@@ -1,5 +1,5 @@
+'use client';
 import Image from 'next/image';
-
 import {
   StyledTextContainer,
   StyledContainer,
@@ -11,15 +11,19 @@ import {
 } from './elements';
 import { FC } from 'react';
 import { HeroProps } from '@/type/hero-types';
+import { useRouter } from 'next/navigation';
+
 
 export const Hero: FC<HeroProps> = ({ img, title, description, ctaText, ...props }) => {
+  const router = useRouter();
+
   return (
     <StyledContainer {...props}>
       <StyledTextContainer>
         <StyledTitle>{title}</StyledTitle>
         <StyledDescription>{description}</StyledDescription>
         <StyledCTAContainer>
-          <StyledGetStartedBtn>{ctaText}</StyledGetStartedBtn>
+          <StyledGetStartedBtn onClick={() => router.push('/agency')}>{ctaText}</StyledGetStartedBtn>
         </StyledCTAContainer>
       </StyledTextContainer>
       <StyledImageContainer>
