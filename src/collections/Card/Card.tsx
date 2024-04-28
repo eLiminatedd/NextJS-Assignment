@@ -9,14 +9,27 @@ import {
   CardTextCont,
 } from './elements';
 
+/**
+ * Represents a card component that displays an image, heading, and description.
+ * @param {Object} props - The props object containing the card data.
+ * @param {Object} props.img - The image object containing source, alt text, width, and height.
+ * @param {string} props.img.src - The URL of the image.
+ * @param {string} props.img.alt - The alternative text for the image.
+ * @param {number} props.img.width - The width of the image.
+ * @param {number} props.img.height - The height of the image.
+ * @param {string} props.heading - The heading text of the card.
+ * @param {string} props.text - The description text of the card. Supports HTML.
+ * @param {string} props.backgroundColor - The background color of the card.
+ * @param {string} props.width - The width of the card.
+ * @returns {JSX.Element} JSX representation of the card component.
+ */
+
 export const Card: FC<CardInterface> = ({
   img,
   heading,
   text,
   backgroundColor,
   width,
-  ...props
-  // props important for font!
 }) => {
   return (
     <CardWrapCont $backgroundColor={backgroundColor} width={width}>

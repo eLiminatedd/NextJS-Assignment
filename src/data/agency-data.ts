@@ -1,6 +1,11 @@
 import { CardInterface } from '@/type/card-types';
 import { MainComponentInterface } from '@/type/main-types';
 
+/**
+ * Array containing card data objects.
+ * @type {CardInterface[]}
+ */
+
 const cardData: CardInterface[] = [
   {
     img: { src: '/resources/first.png', alt: '', width: 52, height: 52 },
@@ -24,6 +29,11 @@ const cardData: CardInterface[] = [
     backgroundColor: '#F1F1F1',
   },
 ];
+
+/**
+ * Object containing props for the Main component.
+ * @type {MainComponentInterface}
+ */
 
 export const agencyProps: MainComponentInterface = {
   agencyImg: { src: '/resources/video.png', alt: '', width: 326, height: 520 },
